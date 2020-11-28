@@ -1,0 +1,26 @@
+{
+    // eslint
+    "eslint.validate": [
+      "javascript",
+      "typescript",
+      "javascriptreact",
+      "typescriptreact"
+  
+    //    { "language": "typescript", "autoFix": true },
+    //    { "language": "javscript", "autoFix": true },
+    ],
+    "eslint.options": {
+		"ignore-path": ".gitignore"
+    },
+    
+    // editor
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+        "source.fixAll.eslint": true
+    },
+
+    "npm.packageManager": "yarn",
+    "eslint.packageManager": "yarn",
+    "prettier.packageManager": "yarn",
+  }

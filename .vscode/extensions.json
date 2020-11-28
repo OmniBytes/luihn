@@ -1,0 +1,24 @@
+
+{
+    "recommendations": [
+    //   "42Crunch.vscode-openapi",
+    //   "philosowaffle.openapi-designer",
+  
+      "msjsdiag.debugger-for-chrome",
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "wix.vscode-import-cost",
+      "christian-kohler.path-intellisense",
+      "visualstudioexptteam.vscodeintellicode",
+      "coenraads.bracket-pair-colorizer",
+      "eamodio.gitlens",
+      //"donjayamanne.git-extension-pack",
+      "kisstkondoros.vscode-codemetrics",
+      "stepsize.tech-debt-tracker",
+      "orta.vscode-jest",
+      "ms-vscode-remote.vscode-remote-extensionpack",
+      "ms-vsliveshare.vsliveshare-pack",
+      "ms-azuretools.vscode-docker",
+      "ms-kubernetes-tools.vscode-kubernetes-tools"
+    ]
+  
