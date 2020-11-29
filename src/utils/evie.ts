@@ -1,11 +1,3 @@
-// (function () {
-//   // logic here
-
-//     // dont run server side(nextjs)
-//   if(typeof window === 'undefined') return;
-
-// })();
-
 // Equivalent of jQuery .ready
 document.addEventListener('DOMContentLoaded', function () {
   // Initialize variables
@@ -21,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
   function getOffset(el) {
     let _x = 0
     let _y = 0
-    while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
-      _x += el.offsetLeft - el.scrollLeft
-      _y += el.offsetTop - el.scrollTop
-      el = el.offsetParent
+    while (el && !isNaN(el?.offsetLeft) && !isNaN(el?.offsetTop)) {
+      _x += el?.offsetLeft - el?.scrollLeft
+      _y += el?.offsetTop - el?.scrollTop
+      el = el?.offsetParent
     }
     return {top: _y, left: _x}
   }
@@ -1107,7 +1099,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
               return arguments[2].toUpperCase()
             })
           }
-          return el.currentStyle[prop] ? el.currentStyle[prop] : null
+          return el?.currentStyle[prop] ? el?.currentStyle[prop] : null
         }
         return this
       }
@@ -1128,10 +1120,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         if ('addEventListener' in el) {
           // BBOS6 doesn't support handleEvent, catch and polyfill
           try {
-            el.addEventListener(evt, fn, bubble)
+            el?.addEventListener(evt, fn, bubble)
           } catch (e) {
             if (typeof fn === 'object' && fn.handleEvent) {
-              el.addEventListener(
+              el?.addEventListener(
                 evt,
                 function (e) {
                   // Bind fn as this and set first arg as event object
@@ -1146,12 +1138,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         } else if ('attachEvent' in el) {
           // check if the callback is an object and contains handleEvent
           if (typeof fn === 'object' && fn.handleEvent) {
-            el.attachEvent('on' + evt, function () {
+            el?.attachEvent('on' + evt, function () {
               // Bind fn as this
               fn.handleEvent.call(fn)
             })
           } else {
-            el.attachEvent('on' + evt, fn)
+            el?.attachEvent('on' + evt, fn)
           }
         }
       },
@@ -1166,10 +1158,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       removeEvent = function (el, evt, fn, bubble) {
         if ('removeEventListener' in el) {
           try {
-            el.removeEventListener(evt, fn, bubble)
+            el?.removeEventListener(evt, fn, bubble)
           } catch (e) {
             if (typeof fn === 'object' && fn.handleEvent) {
-              el.removeEventListener(
+              el?.removeEventListener(
                 evt,
                 function (e) {
                   fn.handleEvent.call(fn, e)
@@ -1182,11 +1174,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           }
         } else if ('detachEvent' in el) {
           if (typeof fn === 'object' && fn.handleEvent) {
-            el.detachEvent('on' + evt, function () {
+            el?.detachEvent('on' + evt, function () {
               fn.handleEvent.call(fn)
             })
           } else {
-            el.detachEvent('on' + evt, fn)
+            el?.detachEvent('on' + evt, fn)
           }
         }
       },
@@ -1218,7 +1210,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        */
       setAttributes = function (el, attrs) {
         for (const key in attrs) {
-          el.setAttribute(key, attrs[key])
+          el?.setAttribute(key, attrs[key])
         }
       },
       /**
@@ -1228,9 +1220,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        * @param {string}  class
        */
       addClass = function (el, cls) {
-        if (el.className.indexOf(cls) !== 0) {
-          el.className += ' ' + cls
-          el.className = el.className.replace(/(^\s*)|(\s*$)/g, '')
+        if (el?.className.indexOf(cls) !== 0) {
+          el?.className += ' ' + cls
+          el?.className = el?.className.replace(/(^\s*)|(\s*$)/g, '')
         }
       },
       /**
@@ -1241,7 +1233,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
        */
       removeClass = function (el, cls) {
         const reg = new RegExp('(\\s|^)' + cls + '(\\s|$)')
-        el.className = el.className
+        el?.className = el?.className
           .replace(reg, ' ')
           .replace(/(^\s*)|(\s*$)/g, '')
       },
@@ -1299,7 +1291,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       addClass(htmlEl, this.options.jsClass)
 
       // Wrapper
-      this.wrapperEl = el.replace('#', '')
+      this.wrapperEl = el?.replace('#', '')
 
       // Try selecting ID first
       if (document.getElementById(this.wrapperEl)) {

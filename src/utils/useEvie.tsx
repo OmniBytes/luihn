@@ -1,13 +1,7 @@
-import Nav from 'components/Nav'
 import {useEffect} from 'react'
-import 'styles/index.css'
 
-//
-//import 'utils/evie'
-
-function MyApp({Component, pageProps}) {
+function useEvie() {
   useEffect(() => {
-    // Equivalent of jQuery .ready
     document.addEventListener('DOMContentLoaded', function () {
       // Initialize variables
       let lastScrollTop =
@@ -1103,21 +1097,21 @@ function MyApp({Component, pageProps}) {
       )(13)
     })
     /*! responsive-nav.js 1.0.39
- * https://github.com/viljamis/responsive-nav.js
- * http://responsive-nav.com
- *
- * Copyright (c) 2015 @viljamis
- * Available under the MIT license
- Licensed under the MIT license.
-
-Copyright (c) 2013 Viljami Salminen, http://viljamis.com/
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
+           * https://github.com/viljamis/responsive-nav.js
+           * http://responsive-nav.com
+           *
+           * Copyright (c) 2015 @viljamis
+           * Available under the MIT license
+           Licensed under the MIT license.
+          
+          Copyright (c) 2013 Viljami Salminen, http://viljamis.com/
+          
+          Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+          
+          The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+          
+          THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+           */
 
     /* global Event */
     ;(function (document, window, index) {
@@ -1797,13 +1791,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     })(document, window, 0)
   }, [])
 
-  return (
-    <>
-      <Nav />
-
-      <Component {...pageProps} />
-    </>
-  )
+  return null
 }
 
-export default MyApp
+export default useEvie
